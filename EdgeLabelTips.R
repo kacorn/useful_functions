@@ -1,8 +1,8 @@
 EdgeLabelTips <- function(tree){
-  is_tip <- tree$edge[,2] <= length(tree$tip.label) #since the tips are the first to be labeled the first n-your-number-of-tips of edge lengths will be the tip labels
-  edges_and_tips <- as.data.frame(which(is_tip == TRUE)) #pull out the tips
-  edges_and_tips[,2] <- test_tree$tip.label #add tip labels to a new column
-  colnames(edges_and_tips) <- c("edge_label", "species_name") #make names prettier
+  is_tip <- tree$edge[,2] <= length(tree$tip.label) #since the tips are the first to be labeled
+  edges_and_tips <- as.data.frame(which(is_tip == TRUE))
+  edges_and_tips[,2] <- tree$tip.label
+  colnames(edges_and_tips) <- c("edge_label", "tip_label")
   return(edges_and_tips)
 }
 
